@@ -1,6 +1,5 @@
 package fr.ttanesque.EmpireBot.commands.treatment;
 
-import fr.ttanesque.EmpireBot.commands.Clean;
 import net.dv8tion.jda.api.Permission;
 import net.dv8tion.jda.api.entities.Message;
 import net.dv8tion.jda.api.entities.MessageChannel;
@@ -30,13 +29,13 @@ public class CleanTreatment extends MessageTreatment implements Runnable {
     }
 
     @Override
-    public void run() {
+    public final void run() {
         if (this.checkBotChannel()) {
             if (this.checkUserPemission(Permission.MESSAGE_MANAGE)) {
 
                 // get the channel and the argument of the metods
-                MessageChannel channel = eventMessage.getChannel();
-                String arg = this.text.group(1);
+                final MessageChannel channel = eventMessage.getChannel();
+                final String arg = this.text.group(1);
 
                 // get the number to delete
                 int toDelete = ALL_NUMBER;
@@ -45,7 +44,7 @@ public class CleanTreatment extends MessageTreatment implements Runnable {
                 }
 
                 // delete with an iterator
-                Iterator<Message> iterator = channel.getIterableHistory().iterator();
+                final Iterator<Message> iterator = channel.getIterableHistory().iterator();
                 while (iterator.hasNext() && toDelete != 0) {
                     iterator.next().delete().queue();
                     toDelete--;

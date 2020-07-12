@@ -4,20 +4,23 @@ import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 
 import java.util.regex.Matcher;
 
+/**
+ * Treat the demand to generate google search.
+ */
 public class GoogleTreatment extends MessageTreatment implements Runnable {
 
     /**
      * The constructor.
      *
-     * @param text         the matcher get with regex in {@link fr.ttanesque.EmpireBot.commands.Google}
+     * @param text  the matcher get with regex in {@link fr.ttanesque.EmpireBot.commands.Google}
      * @param event the message.
      */
-    public GoogleTreatment(Matcher text, MessageReceivedEvent event) {
+    public GoogleTreatment(final Matcher text, final MessageReceivedEvent event) {
         super(text, event);
     }
 
     @Override
-    public void run() {
+    public final void run() {
         if (this.checkBotChannel()) {
             String recherche = "https://www.google.com/search?q=";
             recherche += text.group(1).replace(' ', '+');
