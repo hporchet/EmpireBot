@@ -34,8 +34,8 @@ public class CleanTreatment extends MessageTreatment implements Runnable {
             if (this.checkUserPemission(Permission.MESSAGE_MANAGE)) {
 
                 // get the channel and the argument of the metods
-                final MessageChannel channel = eventMessage.getChannel();
-                final String arg = this.text.group(1);
+                final MessageChannel channel = this.getEventMessage().getChannel();
+                final String arg = this.getText().group(1);
 
                 // get the number to delete
                 int toDelete = ALL_NUMBER;

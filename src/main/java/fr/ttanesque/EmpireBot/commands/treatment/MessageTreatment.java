@@ -14,17 +14,17 @@ public abstract class MessageTreatment {
     /**
      * The matcher who contains the command.
      */
-    protected final Matcher text;
+    private final Matcher text;
 
     /**
      * The message.
      */
-    protected final MessageReceivedEvent eventMessage;
+    private final MessageReceivedEvent eventMessage;
 
     /**
      * The constructor.
      *
-     * @param text         the matcher get with regex in {@link fr.ttanesque.EmpireBot.commands.Command}
+     * @param text the matcher get with regex in {@link fr.ttanesque.EmpireBot.commands.Command}
      * @param eventMessage the message.
      */
     public MessageTreatment(final Matcher text, final MessageReceivedEvent eventMessage) {
@@ -37,7 +37,8 @@ public abstract class MessageTreatment {
      * @return the truth
      */
     protected boolean checkBotChannel() {
-        return eventMessage.isFromType(ChannelType.TEXT) && !eventMessage.getAuthor().isBot();
+        return eventMessage.isFromType(ChannelType.TEXT)
+        && !eventMessage.getAuthor().isBot();
     }
 
     /**
@@ -46,6 +47,24 @@ public abstract class MessageTreatment {
      * @return the truth
      */
     protected boolean checkUserPemission(final Permission permissionEnum) {
-        return eventMessage.getGuild().getSelfMember().hasPermission(permissionEnum);
+        return eventMessage.getGuild()
+                        .getSelfMember()
+                        .hasPermission(permissionEnum);
+    }
+
+    /**
+     * Getter for the matcher.
+     * @return the matcher
+     */
+    public Matcher getText() {
+        return text;
+    }
+
+    /**
+     * Getter for the Message.
+     * @return the message
+     */
+    public MessageReceivedEvent getEventMessage() {
+        return eventMessage;
     }
 }

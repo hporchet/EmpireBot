@@ -11,15 +11,29 @@ import java.io.IOException;
 /**
  * the main class who start the bot and register the listener.
  */
-public class Bot {
+public final class Bot {
 
-    public static void main(final String[] args) throws LoginException, InterruptedException, IOException {
+    /**
+     * The main methods.
+     * @param args the argument
+     * @throws LoginExceptionnot connected
+     * @throws InterruptedException InterruptedException
+     * @throws IOException config...
+     */
+    public static void main(final String[] args)
+    throws LoginException, InterruptedException, IOException {
         //start bot 1 shard
         JDA jda = JDABuilder
-                .createDefault(Config.configInstance.getInitConf().getToken())
+                .createDefault(Config.getConfigInstance().getInitConf().getToken())
                 .build();
         // we wait the jda isready
         jda.addEventListener(new Clean());
         jda.addEventListener(new Google());
+    }
+
+    /**
+     * Basic constructor.
+     */
+    private Bot() {
     }
 }

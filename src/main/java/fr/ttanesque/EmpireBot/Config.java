@@ -14,7 +14,7 @@ public class Config {
     /**
      * The instance.
      */
-    public static Config configInstance;
+    private static Config configInstance;
 
     static {
         try {
@@ -58,4 +58,13 @@ public class Config {
     public InitConf getInitConf() throws IOException {
         return om.readValue(configFile, InitConf.class);
     }
+
+    /**
+     * The getter for the instance.
+     * @return the config object
+     */
+    public static Config getConfigInstance() {
+        return configInstance;
+    }
+
 }

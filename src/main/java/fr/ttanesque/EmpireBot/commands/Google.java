@@ -22,7 +22,7 @@ public class Google extends Command {
         //create the regex
         String prefix = "";
         try {
-            prefix = Config.configInstance.getInitConf().getPrefix();
+            prefix = Config.getConfigInstance().getInitConf().getPrefix();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -31,7 +31,7 @@ public class Google extends Command {
     }
 
     @Override
-    public void onMessageReceived(@Nonnull MessageReceivedEvent event) {
+    public final void onMessageReceived(@Nonnull final MessageReceivedEvent event) {
         // create the matcher
         Matcher m = pattern.matcher(event.getMessage().getContentRaw());
         if (m.matches()) {

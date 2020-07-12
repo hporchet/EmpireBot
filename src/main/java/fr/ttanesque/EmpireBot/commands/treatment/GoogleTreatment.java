@@ -12,7 +12,8 @@ public class GoogleTreatment extends MessageTreatment implements Runnable {
     /**
      * The constructor.
      *
-     * @param text  the matcher get with regex in {@link fr.ttanesque.EmpireBot.commands.Google}
+     * @param text  the matcher get with regex in
+     * {@link fr.ttanesque.EmpireBot.commands.Google}
      * @param event the message.
      */
     public GoogleTreatment(final Matcher text, final MessageReceivedEvent event) {
@@ -23,9 +24,9 @@ public class GoogleTreatment extends MessageTreatment implements Runnable {
     public final void run() {
         if (this.checkBotChannel()) {
             String recherche = "https://www.google.com/search?q=";
-            recherche += text.group(1).replace(' ', '+');
+            recherche += this.getText().group(1).replace(' ', '+');
 
-            eventMessage.getChannel().sendMessage(recherche).queue();
+            this.getEventMessage().getChannel().sendMessage(recherche).queue();
         }
     }
 }
