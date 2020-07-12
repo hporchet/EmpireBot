@@ -1,6 +1,5 @@
 package fr.ttanesque.EmpireBot.commands.treatment;
 
-import net.dv8tion.jda.api.entities.MessageEmbed;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 
 import java.util.regex.Matcher;
