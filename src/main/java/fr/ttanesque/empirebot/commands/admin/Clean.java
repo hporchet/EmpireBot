@@ -1,10 +1,13 @@
-package fr.ttanesque.EmpireBot.commands;
+package fr.ttanesque.empirebot.commands.admin;
 
-import fr.ttanesque.EmpireBot.Config;
-import fr.ttanesque.EmpireBot.commands.treatment.CleanTreatment;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 
 import javax.annotation.Nonnull;
+
+import fr.ttanesque.empirebot.Config;
+import fr.ttanesque.empirebot.commands.Command;
+import fr.ttanesque.empirebot.commands.admin.treatment.CleanTreatment;
+
 import java.io.IOException;
 import java.util.regex.Matcher;
 
@@ -30,7 +33,7 @@ public class Clean extends Command {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        String regex = prefix + this.getName() + " (\\d|all)";
+        String regex = prefix + this.getName() + " (\\d*|all)";
         this.constructRegex(regex);
 
     }

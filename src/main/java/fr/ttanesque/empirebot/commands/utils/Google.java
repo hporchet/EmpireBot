@@ -1,10 +1,13 @@
-package fr.ttanesque.EmpireBot.commands;
+package fr.ttanesque.empirebot.commands.utils;
 
-import fr.ttanesque.EmpireBot.Config;
-import fr.ttanesque.EmpireBot.commands.treatment.GoogleTreatment;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 
 import javax.annotation.Nonnull;
+
+import fr.ttanesque.empirebot.Config;
+import fr.ttanesque.empirebot.commands.Command;
+import fr.ttanesque.empirebot.commands.utils.treatment.GoogleTreatment;
+
 import java.io.IOException;
 import java.util.regex.Matcher;
 

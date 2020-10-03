@@ -1,4 +1,4 @@
-package fr.ttanesque.EmpireBot.commands.treatment;
+package fr.ttanesque.empirebot.commands.admin.treatment;
 
 import net.dv8tion.jda.api.Permission;
 import net.dv8tion.jda.api.entities.Message;
@@ -7,6 +7,8 @@ import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 
 import java.util.Iterator;
 import java.util.regex.Matcher;
+
+import fr.ttanesque.empirebot.commands.treatment.MessageTreatment;
 
 /**
  * Execute the treatment for the clean command.

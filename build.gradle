@@ -3,7 +3,7 @@ plugins {
     id'com.github.johnrengelman.shadow' version '4.0.4'
 }
 
-mainClassName = 'fr.ttanesque.EmpireBot.Bot'
+mainClassName = 'fr.ttanesque.empirebot.Bot'
 version '1.0-SNAPSHOT'
 sourceCompatibility = targetCompatibility = 1.8
 
@@ -14,7 +14,7 @@ repositories {
 
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
-    compile('net.dv8tion:JDA:4.1.1_167') {
+    compile('net.dv8tion:JDA:4.2.0_204') {
         exclude module: 'opus-java'
     }
     implementation 'com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.11.1'

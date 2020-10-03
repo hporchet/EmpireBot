@@ -1,4 +1,4 @@
-package fr.ttanesque.EmpireBot.config;
+package fr.ttanesque.empirebot.config;
 
 /**
  * this object contain the basic config for start the bot.

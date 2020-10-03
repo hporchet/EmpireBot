@@ -1,4 +1,4 @@
-package fr.ttanesque.EmpireBot.commands;
+package fr.ttanesque.empirebot.commands;
 
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 

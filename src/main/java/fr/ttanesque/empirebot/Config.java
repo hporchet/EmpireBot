@@ -1,8 +1,9 @@
-package fr.ttanesque.EmpireBot;
+package fr.ttanesque.empirebot;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
-import fr.ttanesque.EmpireBot.config.InitConf;
+
+import fr.ttanesque.empirebot.config.InitConf;
 
 import java.io.File;
 import java.io.IOException;

@@ -1,11 +1,14 @@
-package fr.ttanesque.EmpireBot;
+package fr.ttanesque.empirebot;
 
-import fr.ttanesque.EmpireBot.commands.Clean;
-import fr.ttanesque.EmpireBot.commands.Google;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
 
 import javax.security.auth.login.LoginException;
+
+import fr.ttanesque.empirebot.commands.utils.*;
+import fr.ttanesque.empirebot.commands.admin.*;
+import fr.ttanesque.empirebot.commands.FoncteurCommand;
+
 import java.io.IOException;
 
 /**
@@ -27,8 +30,12 @@ public final class Bot {
                 .createDefault(Config.getConfigInstance().getInitConf().getToken())
                 .build();
         // we wait the jda isready
+        jda.addEventListener(new FoncteurCommand(new DelTimeMessage()));
         jda.addEventListener(new Clean());
         jda.addEventListener(new Google());
+        jda.addEventListener(new StackOverflow());
+        jda.addEventListener(new MoveMsg());
+        jda.addEventListener(new QuoteMsg());
     }
 
     /**
