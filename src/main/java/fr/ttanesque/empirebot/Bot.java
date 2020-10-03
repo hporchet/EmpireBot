@@ -5,8 +5,12 @@ import net.dv8tion.jda.api.JDABuilder;
 
 import javax.security.auth.login.LoginException;
 
-import fr.ttanesque.empirebot.commands.utils.*;
-import fr.ttanesque.empirebot.commands.admin.*;
+import fr.ttanesque.empirebot.commands.utils.DelTimeMessage;
+import fr.ttanesque.empirebot.commands.utils.Google;
+import fr.ttanesque.empirebot.commands.utils.StackOverflow;
+import fr.ttanesque.empirebot.commands.utils.QuoteMsg;
+import fr.ttanesque.empirebot.commands.admin.Clean;
+import fr.ttanesque.empirebot.commands.admin.MoveMsg;
 import fr.ttanesque.empirebot.commands.FoncteurCommand;
 
 import java.io.IOException;
@@ -32,7 +36,7 @@ public final class Bot {
         assert jda != null;
         // we wait the jda isready
         jda.addEventListener(new FoncteurCommand(new DelTimeMessage()));
-        jda.addEventListener(new Clean());
+        jda.addEventListener(new FoncteurCommand(new Clean()));
         jda.addEventListener(new Google());
         jda.addEventListener(new StackOverflow());
         jda.addEventListener(new MoveMsg());
