@@ -19,16 +19,17 @@ public final class Bot {
     /**
      * The main methods.
      * @param args the argument
-     * @throws LoginExceptionnot connected
-     * @throws InterruptedException InterruptedException
-     * @throws IOException config...
      */
-    public static void main(final String[] args)
-    throws LoginException, InterruptedException, IOException {
+    public static void main(final String[] args) {
         //start bot 1 shard
-        JDA jda = JDABuilder
-                .createDefault(Config.getConfigInstance().getInitConf().getToken())
-                .build();
+        JDA jda = null;
+        try {
+            jda = JDABuilder.createDefault(Config.getConfigInstance().getInitConf().getToken()).build();
+        } catch (LoginException | IOException e) {
+            e.printStackTrace();
+        }
+
+        assert jda != null;
         // we wait the jda isready
         jda.addEventListener(new FoncteurCommand(new DelTimeMessage()));
         jda.addEventListener(new Clean());
